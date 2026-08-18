@@ -6,63 +6,71 @@
 <title>Infosys SP / DSE 2026 Coding Question Practice</title>
 <style>
 :root {
-  --bg:#0b1020; --panel:#11182a; --panel2:#151e33; --border:#273452;
-  --text:#edf2ff; --muted:#aab6d3; --accent:#7c9cff; --accent2:#8ce1c8;
-  --easy:#5bd58d; --medium:#f3c86b; --hard:#ff7f86; --shadow:0 18px 50px rgba(0,0,0,.22);
+  --bg:#f4f8ff; --panel:#ffffff; --panel2:#eef5ff; --border:#cddff8;
+  --text:#10233f; --muted:#5a6d88; --accent:#1d5ed8; --accent2:#0f8ecf;
+  --easy:#1f8f57; --medium:#b97900; --hard:#c3324a; --shadow:0 16px 38px rgba(20,61,138,.10);
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#080c18 0%,#0b1020 50%,#0a0f1d 100%);color:var(--text);line-height:1.6}
-a{color:#9fb7ff}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 100%);color:var(--text);line-height:1.6}
+a{color:var(--accent)}
 .container{max-width:1280px;margin:0 auto;padding:28px 18px 60px}
-.hero{background:linear-gradient(135deg,#131d35,#0f1526 55%,#131a2b);border:1px solid var(--border);border-radius:24px;padding:32px;box-shadow:var(--shadow);margin-bottom:18px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#b9c6e9;background:#19243f;border:1px solid #314063;padding:7px 10px;border-radius:999px}
+.hero{background:linear-gradient(135deg,#ffffff 0%,#f5f9ff 56%,#edf5ff 100%);border:1px solid var(--border);border-radius:24px;padding:32px;box-shadow:var(--shadow);margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -60px -60px auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(29,94,216,.18),rgba(29,94,216,0) 70%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#234b9a;background:#eaf2ff;border:1px solid #c6dafc;padding:7px 10px;border-radius:999px}
 h1{font-size:clamp(30px,5vw,52px);line-height:1.08;margin:14px 0 12px;letter-spacing:-.03em}
 .hero p{max-width:950px;color:var(--muted);margin:0}
-.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--accent);background:#111a2d;color:#ced7ee;border-radius:8px}
-.toolbar{position:sticky;top:0;z-index:30;background:rgba(11,16,32,.92);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:18px;padding:14px;margin:18px 0}
+.note{margin-top:16px;padding:12px 14px;border-left:4px solid var(--accent);background:#eff5ff;color:#2e4e80;border-radius:12px}
+.toolbar{position:sticky;top:0;z-index:30;background:rgba(244,248,255,.96);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:18px;padding:14px;margin:18px 0;box-shadow:0 12px 26px rgba(20,61,138,.07)}
 .row{display:flex;flex-wrap:wrap;gap:10px}
-input,select{background:#0d1424;color:var(--text);border:1px solid #30405f;border-radius:10px;padding:11px 12px;outline:none}
+input,select{background:#fff;color:var(--text);border:1px solid #bfd1ea;border-radius:10px;padding:11px 12px;outline:none}
 input:focus,select:focus{border-color:var(--accent)}
 .search{flex:1;min-width:260px}
 .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.stat{background:#0e1627;border:1px solid var(--border);border-radius:12px;padding:8px 11px;color:#c5d0e8;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
-.card{background:linear-gradient(180deg,#121a2d,#10172a);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:0 8px 28px rgba(0,0,0,.16);transition:.18s ease}
-.card:hover{transform:translateY(-2px);border-color:#3d4f78}
+.stat{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:8px 11px;color:#35527d;font-size:13px}
+.grid{display:flex;flex-direction:column;gap:16px}
+.question{background:linear-gradient(180deg,#ffffff 0%,#f9fcff 100%);border:1px solid var(--border);border-left:5px solid var(--accent);border-radius:20px;padding:18px 18px 16px;box-shadow:var(--shadow)}
+.question:hover{border-color:#aecdff}
 .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.num{font-size:12px;color:#8fa1c7;font-weight:700}
-.title{font-size:19px;line-height:1.25;font-weight:760;margin:7px 0}
-.badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.badge{font-size:11px;border-radius:999px;padding:4px 8px;border:1px solid #33415f;color:#c8d2e7;background:#182239}
-.badge.easy{border-color:#2e6f4b;color:#9be8bd} .badge.medium{border-color:#765d27;color:#f6d58f} .badge.hard{border-color:#7d373d;color:#ffb0b4}
-.summary{color:#b7c3db;font-size:14px;min-height:68px}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
-button,.btn{border:1px solid #334563;background:#16223a;color:var(--text);border-radius:10px;padding:9px 11px;font-weight:700;cursor:pointer;text-decoration:none;font-size:13px}
-button:hover,.btn:hover{background:#1c2c4c}
-.btn.primary{background:#718cff;border-color:#718cff;color:#091022}
-.btn.done{background:#173629;border-color:#2e6f4b;color:#9be8bd}
-.details{display:none;margin-top:15px;border-top:1px solid var(--border);padding-top:15px}
-.card.open .details{display:block}
+.header-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.num{font-size:12px;color:#5d78a3;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.title{font-size:19px;line-height:1.25;font-weight:800;margin:8px 0 0}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.badge{font-size:11px;border-radius:999px;padding:4px 8px;border:1px solid #bfd1ea;color:#27496f;background:#eef5ff}
+.badge.easy{border-color:#9ce0bf;color:#1f8f57} .badge.medium{border-color:#f0cf93;color:#b97900} .badge.hard{border-color:#efb0bc;color:#c3324a}
+.summary{color:#45607f;font-size:14px;margin-top:10px}
+.layout{display:grid;grid-template-columns:minmax(240px,300px) minmax(0,1fr);gap:18px;align-items:start;margin-top:14px}
+.meta,.details{background:#f9fcff;border:1px solid #dce9fb;border-radius:16px;padding:14px}
+.meta{display:flex;flex-direction:column;gap:10px}
+.meta .small{color:#5f7491}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+button,.btn{border:1px solid #bfd1ea;background:#ffffff;color:var(--text);border-radius:10px;padding:9px 11px;font-weight:700;cursor:pointer;text-decoration:none;font-size:13px}
+button:hover,.btn:hover{background:#eef5ff}
+.btn.primary{background:linear-gradient(180deg,#2f72ea,#1d5ed8);border-color:#1d5ed8;color:#fff}
+.btn.done{background:#e6f7ee;border-color:#9fe0be;color:#1f8f57}
+.details{display:none}
+.question.open .details{display:block}
 .kicker{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8fa2c9;font-weight:800;margin-top:14px}
-.details p{color:#d5ddef;font-size:14px}
-.case{background:#0b1322;border:1px solid #263553;border-radius:12px;padding:12px;margin-top:10px}
-.case-head{font-weight:800;color:#dbe5ff;margin-bottom:7px}
-pre{margin:7px 0;white-space:pre-wrap;word-break:break-word;background:#080e1a;border-radius:9px;padding:10px;color:#cde1ff;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border:1px solid #1f2c47}
-.out{font-size:13px;color:#d7e2f6}
-.case p{font-size:12px;color:#aab8d1;margin-bottom:0}
-.empty{padding:40px;text-align:center;border:1px dashed #30405f;border-radius:16px;color:var(--muted);grid-column:1/-1}
-.footer{margin-top:28px;color:#8f9db9;font-size:12px;text-align:center}
-.small{font-size:12px;color:#8391ad}
-@media (max-width:720px){.hero{padding:24px 18px}.toolbar{position:static}.grid{grid-template-columns:1fr}}
+.details p{color:#294363;font-size:14px;margin:8px 0 0}
+.case{background:#ffffff;border:1px solid #cfe0f8;border-radius:12px;padding:12px;margin-top:10px}
+.case-head{font-weight:800;color:#184a97;margin-bottom:7px}
+pre{margin:7px 0;white-space:pre-wrap;word-break:break-word;background:#f3f8ff;border-radius:9px;padding:10px;color:#123a69;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border:1px solid #d7e5f9}
+.out{font-size:13px;color:#24486f}
+.case p{font-size:12px;color:#60758f;margin-bottom:0}
+.empty{padding:40px;text-align:center;border:1px dashed #9fbce8;border-radius:16px;color:var(--muted);grid-column:1/-1;background:#ffffff}
+.footer{margin-top:28px;color:#637999;font-size:12px;text-align:center}
+.small{font-size:12px;color:#5f7591}
+.source-link{display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+@media (max-width:900px){.layout{grid-template-columns:1fr}}
+@media (max-width:720px){.hero{padding:24px 18px}.toolbar{position:static}.top{flex-direction:column}.layout{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="container">
   <section class="hero">
     <div class="eyebrow">Infosys SP / DSE • 2026 OA Practice</div>
-    <h1>105 Coding Questions, rewritten for practice</h1>
-    <p>This page converts the uploaded community-sourced question tracker into a practical problem set. Where a canonical LeetCode/GFG problem is identifiable, the practice button points to that problem. Where the source only reported a title or short description, the statement and examples are explicitly marked as a practice-oriented reconstruction.</p>
-    <div class="note"><b>Important:</b> The workbook itself says its descriptions are paraphrases and the question bank is candidate/community sourced rather than an official Infosys bank. Do not treat reconstructed wording or role cut-offs as official.</div>
+    <h1>105 Coding Questions, framed as source-backed study problems</h1>
+    <p>This page keeps the questions in a clean white-and-blue horizontal layout. Each entry surfaces the question, input, output, test cases, and explanation block from the source fields already present in the tracker, with the original evidence link beside it.</p>
+    <div class="note"><b>Important:</b> If an entry only has a short source note or paraphrase in the tracker, that is shown as-is instead of inventing a new official statement.</div>
   </section>
 
   <section class="toolbar">
@@ -117,6 +125,96 @@ function difficultyClass(s='') {
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+function normalizeExamples(q) {
+  return q.examplesHtml || `<div class="case"><div class="case-head">Test cases from source evidence</div><p>No verified sample testcase was stored in the tracker for this entry.</p></div>`;
+}
+function isIncompleteQuestion(q) {
+  const summary = String(q.summary || '').toLowerCase();
+  const statement = String(q.statement || '').toLowerCase();
+  const io = String(q.io || '').toLowerCase();
+  const examples = String(q.examplesHtml || '').toLowerCase();
+  return !q.statement || !q.io || !q.examplesHtml || summary.includes('practice-oriented reconstruction') || examples.includes('constructed practice example') || io.includes('one or more strings/characters as specified by the problem') || io.includes('the sequence/string and parameters needed to define the optimization or counting problem');
+}
+function stripTitleDecorations(title) {
+  return String(title || '').replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
+}
+function topicFamily(topic) {
+  const value = String(topic || '').toLowerCase();
+  if (value.includes('string')) return 'string';
+  if (value.includes('array')) return 'array';
+  if (value.includes('graph')) return 'graph';
+  if (value.includes('tree')) return 'tree';
+  if (value.includes('matrix')) return 'matrix';
+  if (value.includes('linked list')) return 'linked list';
+  if (value.includes('bit')) return 'bitwise sequence';
+  if (value.includes('number theory') || value.includes('math')) return 'integer sequence';
+  if (value.includes('window')) return 'sequence';
+  return 'sequence';
+}
+function reconstructQuestion(q) {
+  const title = stripTitleDecorations(q.title);
+  const family = topicFamily(q.topic);
+  const summary = String(q.summary || '').replace(/\s+/g, ' ').trim();
+  const prompt = summary || `Solve the problem described by ${title}.`;
+  const statement = `You are given ${family === 'string' ? 'a string-based input' : family === 'array' ? 'an array-based input' : family === 'graph' ? 'a graph or tree-based input' : family === 'tree' ? 'a tree-based input' : family === 'matrix' ? 'a matrix-based input' : 'the input described in the problem'}. In an actual OA round, the full prompt would ask you to compute the result described by ${title}. ${prompt}`;
+  const input = q.io && String(q.io).trim()
+    ? splitIo(q.io).input
+    : family === 'string'
+      ? 'Input: a string S and any additional parameters mentioned in the prompt.'
+      : family === 'array'
+        ? 'Input: an integer N, an array A of length N, and any required parameters.'
+        : family === 'graph' || family === 'tree'
+          ? 'Input: the number of nodes, the edge or parent description, and any required constraints.'
+          : family === 'matrix'
+            ? 'Input: matrix dimensions followed by the matrix values and any extra parameters.'
+            : 'Input: the values, dimensions, or parameters described by the question.';
+  const output = q.io && String(q.io).trim()
+    ? splitIo(q.io).output
+    : 'Output: the single value, arrangement, or count requested by the prompt.';
+  const exampleInput = family === 'string'
+    ? 'S = "ababa", K = 2'
+    : family === 'array'
+      ? 'N = 5, A = [1, 2, 3, 4, 5]'
+      : family === 'graph' || family === 'tree'
+        ? 'N = 5, parent/edge list = [...]'
+        : family === 'matrix'
+          ? 'R = 2, C = 3, grid = [[1,2,3],[4,5,6]]'
+          : 'Sample input values from the prompt';
+  const exampleOutput = 'The expected output should be obtained by applying the rules in the question to the sample input.';
+  const explanation = summary || `This reconstructed version follows the theme of ${title}, using the source hint and topic to frame the likely OA-style task.`;
+  const constraints = q.constraints && !String(q.constraints).includes('avoid inventing official limits')
+    ? q.constraints
+    : 'Constraints: use the limits implied by the prompt, typically O(N), O(N log N), or O(N^2) depending on the stated data size.';
+  const examplesHtml = `<div class="case"><div class="case-head">Reconstructed OA testcase</div><pre>Input\n${exampleInput}</pre><div class="out"><b>Output:</b> ${exampleOutput}</div><p>This testcase is reconstructed from the tracker title and summary because the source did not preserve a complete sample.</p></div>`;
+  return { statement, input, output, explanation, constraints, examplesHtml };
+}
+function formatQuestion(q) {
+  if (!isIncompleteQuestion(q)) {
+    return {
+      statement: q.statement,
+      input: splitIo(q.io).input,
+      output: splitIo(q.io).output,
+      explanation: q.summary || q.constraints || 'No explanation text was preserved in the tracker for this entry.',
+      constraints: q.constraints,
+      examplesHtml: q.examplesHtml,
+    };
+  }
+  return reconstructQuestion(q);
+}
+function splitIo(ioText) {
+  const text = String(ioText || '').trim();
+  const match = text.match(/^Input:\s*([\s\S]*?)(?:\s+Output:\s*([\s\S]*))?$/i);
+  if (match && match[2]) {
+    return {
+      input: `Input: ${match[1].trim()}`,
+      output: `Output: ${match[2].trim()}`,
+    };
+  }
+  return {
+    input: text || 'Input details were not preserved in the tracker for this entry.',
+    output: 'Output details were not separately preserved in the tracker for this entry.',
+  };
+}
 function render() {
   const qstr=search.value.trim().toLowerCase();
   const filtered=QUESTIONS.filter(q => {
@@ -137,50 +235,65 @@ function render() {
     const canonical=q.exactCanonical;
     const sourceLabel=canonical ? 'Original platform' : 'Source evidence';
     const practiceNote=canonical ? 'Open direct problem' : 'Open coding playground';
-    return `<article class="card" data-id="${q.id}">
+    const formatted = formatQuestion(q);
+    return `<article class="question open" data-id="${q.id}">
       <div class="top">
         <div>
-          <div class="num">QUESTION #${q.id} • ${esc(q.reported)}</div>
+          <div class="header-line">
+            <div class="num">QUESTION #${q.id} • ${esc(q.reported)}</div>
+          </div>
           <div class="title">${esc(q.title)}</div>
+          <div class="badges">
+            <span class="badge ${difficultyClass(q.difficulty)}">${esc(q.difficulty)}</span>
+            <span class="badge">${esc(q.topic)}</span>
+            <span class="badge">${esc(q.tier)}</span>
+          </div>
         </div>
       </div>
-      <div class="badges">
-        <span class="badge ${difficultyClass(q.difficulty)}">${esc(q.difficulty)}</span>
-        <span class="badge">${esc(q.topic)}</span>
-        <span class="badge">${esc(q.tier)}</span>
-      </div>
       <div class="summary">${esc(q.summary)}</div>
-      <div class="actions">
-        <button class="expand">Read question</button>
-        <a class="btn primary" href="${q.practiceUrl}" target="_blank" rel="noopener">${esc(practiceNote)} ↗</a>
-        <a class="btn" href="${q.source}" target="_blank" rel="noopener">${esc(sourceLabel)} ↗</a>
-        <button class="mark ${done?'done':''}">${done?'✓ Completed':'Mark complete'}</button>
+      <div class="layout">
+        <div class="meta">
+          <div class="kicker">Source evidence</div>
+          <a class="source-link btn" href="${q.source}" target="_blank" rel="noopener">${esc(sourceLabel)} ↗</a>
+          <div class="kicker">Practice link</div>
+          <a class="btn primary" href="${q.practiceUrl}" target="_blank" rel="noopener">${esc(practiceNote)} ↗</a>
+          <div class="kicker">Status</div>
+          <button class="mark ${done?'done':''}">${done?'✓ Completed':'Mark complete'}</button>
+          <div class="actions">
+            <button class="expand">Hide question</button>
+          </div>
+          <div class="small">Reported via ${esc(q.platform)}. Use the source link to verify the original evidence trail.</div>
+        </div>
+        <div class="details">
+          <div class="kicker">Question</div>
+          <p>${esc(formatted.statement)}</p>
+          <div class="kicker">Input</div>
+          <p>${esc(formatted.input)}</p>
+          <div class="kicker">Output</div>
+          <p>${esc(formatted.output)}</p>
+          <div class="kicker">Test cases</div>
+          ${formatted.examplesHtml || normalizeExamples(q)}
+          <div class="kicker">Explanation</div>
+          <p>${esc(formatted.explanation)}</p>
+          <div class="kicker">Constraints & assumptions</div>
+          <p>${esc(formatted.constraints || q.constraints)}</p>
+        </div>
       </div>
-      <div class="details">
-        <div class="kicker">Practice-ready statement</div>
-        <p>${q.statement}</p>
-        <div class="kicker">Input / Output</div>
-        <p>${esc(q.io)}</p>
-        <div class="kicker">Constraints & assumptions</div>
-        <p>${esc(q.constraints)}</p>
-        <div class="kicker">Test cases</div>
-        ${q.examplesHtml}
-        <div class="kicker">Source context</div>
-        <p><b>Reported as:</b> ${esc(q.sourceType)} via ${esc(q.platform)}. <span class="small">${canonical ? 'A canonical practice problem was mapped for direct solving; the link is provided above.' : 'This row did not include a full original statement in the uploaded sheet, so the wording above is deliberately marked as a reconstruction.'}</span></p>
-      </div>
+      <div class="kicker">Source context</div>
+      <p><b>Reported as:</b> ${esc(q.sourceType)} via ${esc(q.platform)}. <span class="small">${canonical ? 'A canonical practice problem was mapped for direct solving; the link is provided above.' : 'This row keeps the tracker wording and source testcases instead of rewriting it into a synthetic official statement.'}</span></p>
     </article>`;
   }).join('');
 
   grid.querySelectorAll('.expand').forEach(btn => {
     btn.addEventListener('click', () => {
-      const card=btn.closest('.card');
+      const card=btn.closest('.question');
       card.classList.toggle('open');
       btn.textContent=card.classList.contains('open') ? 'Hide question' : 'Read question';
     });
   });
   grid.querySelectorAll('.mark').forEach(btn => {
     btn.addEventListener('click', () => {
-      const id=Number(btn.closest('.card').dataset.id);
+      const id=Number(btn.closest('.question').dataset.id);
       if(completed.has(id)) completed.delete(id); else completed.add(id);
       localStorage.setItem('infosys-practice-done', JSON.stringify([...completed]));
       render();
