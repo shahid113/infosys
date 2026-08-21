@@ -15,10 +15,7 @@
             brand: {
               easy: '#22c55e',
               medium: '#eab308',
-              hard: '#ef4444',
-              bg: '#18181b',
-              card: '#27272a',
-              accent: '#3f3f46'
+              hard: '#ef4444'
             }
           }
         }
@@ -27,108 +24,128 @@
   </script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 min-h-screen font-sans antialiased transition-colors duration-200">
 
   <!-- Header -->
-  <header class="border-b border-zinc-800 bg-zinc-900/80 sticky top-0 z-50 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="p-2 bg-blue-600/20 text-blue-400 rounded-lg border border-blue-500/30 font-bold">
+  <header class="border-b border-slate-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+      <!-- Logo & Title -->
+      <div class="flex items-center space-x-2.5 sm:space-x-3">
+        <div class="p-2 bg-blue-600/10 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 rounded-lg border border-blue-500/20 dark:border-blue-500/30 font-bold shrink-0">
           &lt;/&gt;
         </div>
         <div>
-          <h1 class="font-bold text-lg leading-none text-zinc-100">Infosys CodePrep</h1>
-          <p class="text-xs text-zinc-400 mt-1">Curated Interview Question Tracker</p>
+          <h1 class="font-bold text-base sm:text-lg leading-tight text-slate-900 dark:text-zinc-100">Infosys CodePrep</h1>
+          <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400 hidden xs:block">Interview Question Tracker</p>
         </div>
       </div>
-      <button id="reset-btn" class="px-3 py-1.5 text-xs text-zinc-400 hover:text-red-400 border border-zinc-700 hover:border-red-500/50 rounded-md transition-all">
-        Reset Progress
-      </button>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 text-slate-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-zinc-100 border border-slate-300 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 rounded-lg transition-colors">
+          <!-- Sun Icon (Show in Dark Mode) -->
+          <svg id="theme-toggle-light-icon" class="w-4 h-4 sm:w-5 sm:h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"/>
+          </svg>
+          <!-- Moon Icon (Show in Light Mode) -->
+          <svg id="theme-toggle-dark-icon" class="w-4 h-4 sm:w-5 sm:h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+          </svg>
+        </button>
+
+        <!-- Reset Button -->
+        <button id="reset-btn" class="px-2.5 py-1.5 text-xs text-slate-600 dark:text-zinc-400 hover:text-red-600 dark:hover:text-red-400 border border-slate-300 dark:border-zinc-700 hover:border-red-500/50 rounded-lg transition-all">
+          Reset Progress
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
 
-    <!-- Overall Statistics Card -->
-    <section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <!-- Overall Statistics Cards -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <!-- Main Progress -->
-      <div class="md:col-span-1 bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+      <div class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm">
         <div>
-          <span class="text-xs uppercase tracking-wider text-zinc-500 font-semibold">Total Progress</span>
-          <div class="flex items-baseline space-x-2 mt-2">
-            <span id="solved-count" class="text-3xl font-extrabold text-white">0</span>
-            <span class="text-zinc-500 text-sm">/ <span id="total-count">0</span> Solved</span>
+          <span class="text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-500 font-semibold">Total Progress</span>
+          <div class="flex items-baseline space-x-2 mt-1 sm:mt-2">
+            <span id="solved-count" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">0</span>
+            <span class="text-slate-500 dark:text-zinc-500 text-xs sm:text-sm">/ <span id="total-count">0</span> Solved</span>
           </div>
         </div>
         <div class="mt-4">
-          <div class="flex justify-between text-xs text-zinc-400 mb-1">
+          <div class="flex justify-between text-xs text-slate-500 dark:text-zinc-400 mb-1">
             <span>Completion</span>
             <span id="progress-percent">0%</span>
           </div>
-          <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden">
+          <div class="w-full bg-slate-200 dark:bg-zinc-800 h-2.5 rounded-full overflow-hidden">
             <div id="progress-bar" class="bg-blue-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
           </div>
         </div>
       </div>
 
-      <!-- Difficulty Breakdown -->
-      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+      <!-- Easy Stat -->
+      <div class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm">
         <div class="flex justify-between items-center">
-          <span class="text-xs uppercase tracking-wider text-green-500 font-semibold">Easy</span>
-          <span id="easy-ratio" class="text-xs text-zinc-400">0/0</span>
+          <span class="text-xs uppercase tracking-wider text-green-600 dark:text-green-500 font-semibold">Easy</span>
+          <span id="easy-ratio" class="text-xs text-slate-500 dark:text-zinc-400">0/0</span>
         </div>
-        <div class="text-2xl font-bold text-zinc-100 mt-2" id="easy-count">0</div>
-        <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
+        <div class="text-2xl font-bold text-slate-900 dark:text-zinc-100 mt-2" id="easy-count">0</div>
+        <div class="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
           <div id="easy-bar" class="bg-green-500 h-full transition-all duration-300" style="width: 0%"></div>
         </div>
       </div>
 
-      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+      <!-- Medium Stat -->
+      <div class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm">
         <div class="flex justify-between items-center">
-          <span class="text-xs uppercase tracking-wider text-yellow-500 font-semibold">Medium</span>
-          <span id="medium-ratio" class="text-xs text-zinc-400">0/0</span>
+          <span class="text-xs uppercase tracking-wider text-yellow-600 dark:text-yellow-500 font-semibold">Medium</span>
+          <span id="medium-ratio" class="text-xs text-slate-500 dark:text-zinc-400">0/0</span>
         </div>
-        <div class="text-2xl font-bold text-zinc-100 mt-2" id="medium-count">0</div>
-        <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
+        <div class="text-2xl font-bold text-slate-900 dark:text-zinc-100 mt-2" id="medium-count">0</div>
+        <div class="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
           <div id="medium-bar" class="bg-yellow-500 h-full transition-all duration-300" style="width: 0%"></div>
         </div>
       </div>
 
-      <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+      <!-- Hard Stat -->
+      <div class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-4 sm:p-5 flex flex-col justify-between shadow-sm">
         <div class="flex justify-between items-center">
-          <span class="text-xs uppercase tracking-wider text-red-500 font-semibold">Hard</span>
-          <span id="hard-ratio" class="text-xs text-zinc-400">0/0</span>
+          <span class="text-xs uppercase tracking-wider text-red-600 dark:text-red-500 font-semibold">Hard</span>
+          <span id="hard-ratio" class="text-xs text-slate-500 dark:text-zinc-400">0/0</span>
         </div>
-        <div class="text-2xl font-bold text-zinc-100 mt-2" id="hard-count">0</div>
-        <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
+        <div class="text-2xl font-bold text-slate-900 dark:text-zinc-100 mt-2" id="hard-count">0</div>
+        <div class="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-3">
           <div id="hard-bar" class="bg-red-500 h-full transition-all duration-300" style="width: 0%"></div>
         </div>
       </div>
     </section>
 
     <!-- Filters & Search Toolbar -->
-    <section class="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col md:flex-row gap-4 justify-between items-center">
-      <!-- Search -->
+    <section class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-4 flex flex-col md:flex-row gap-3 justify-between items-stretch md:items-center shadow-sm">
+      <!-- Search Input -->
       <div class="w-full md:w-80 relative">
-        <input type="text" id="search-input" placeholder="Search question or tag..." 
-          class="w-full bg-zinc-950 border border-zinc-800 text-sm rounded-lg px-4 py-2 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-blue-500">
+        <input type="text" id="search-input" placeholder="Search title, category, or tag..." 
+          class="w-full bg-slate-50 dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 text-sm rounded-lg px-3.5 py-2 text-slate-800 dark:text-zinc-200 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:border-blue-500 dark:focus:border-blue-500">
       </div>
 
-      <!-- Select Dropdowns -->
-      <div class="flex flex-wrap gap-3 w-full md:w-auto">
-        <select id="category-filter" class="bg-zinc-950 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-300 focus:outline-none focus:border-blue-500">
-          <option value="ALL">All Primary Topics</option>
+      <!-- Filter Controls Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full md:w-auto">
+        <select id="category-filter" class="w-full bg-slate-50 dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 text-xs rounded-lg px-3 py-2 text-slate-700 dark:text-zinc-300 focus:outline-none focus:border-blue-500">
+          <option value="ALL">All Topics</option>
         </select>
 
-        <select id="difficulty-filter" class="bg-zinc-950 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-300 focus:outline-none focus:border-blue-500">
+        <select id="difficulty-filter" class="w-full bg-slate-50 dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 text-xs rounded-lg px-3 py-2 text-slate-700 dark:text-zinc-300 focus:outline-none focus:border-blue-500">
           <option value="ALL">All Difficulties</option>
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select>
 
-        <select id="status-filter" class="bg-zinc-950 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-300 focus:outline-none focus:border-blue-500">
+        <select id="status-filter" class="w-full bg-slate-50 dark:bg-zinc-950 border border-slate-300 dark:border-zinc-800 text-xs rounded-lg px-3 py-2 text-slate-700 dark:text-zinc-300 focus:outline-none focus:border-blue-500">
           <option value="ALL">All Status</option>
           <option value="SOLVED">Solved</option>
           <option value="UNSOLVED">Unsolved</option>
@@ -136,26 +153,26 @@
       </div>
     </section>
 
-    <!-- Question Table -->
-    <section class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-xl">
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-sm text-zinc-400">
-          <thead class="bg-zinc-950/60 text-xs uppercase tracking-wider text-zinc-500 border-b border-zinc-800">
+    <!-- Questions Table Card -->
+    <section class="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
+      <div class="overflow-x-auto min-w-full">
+        <table class="w-full text-left text-sm text-slate-600 dark:text-zinc-400">
+          <thead class="bg-slate-100/80 dark:bg-zinc-950/60 text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-500 border-b border-slate-200 dark:border-zinc-800">
             <tr>
-              <th scope="col" class="py-3 px-4 w-12 text-center">Status</th>
-              <th scope="col" class="py-3 px-4">Title</th>
-              <th scope="col" class="py-3 px-4">Infosys Primary Topic</th>
-              <th scope="col" class="py-3 px-4 w-28">Difficulty</th>
-              <th scope="col" class="py-3 px-4">Tags</th>
+              <th scope="col" class="py-3 px-3 sm:px-4 w-10 text-center">Status</th>
+              <th scope="col" class="py-3 px-3 sm:px-4 min-w-[180px]">Title</th>
+              <th scope="col" class="py-3 px-3 sm:px-4 min-w-[140px]">Infosys Topic</th>
+              <th scope="col" class="py-3 px-3 sm:px-4 w-24">Difficulty</th>
+              <th scope="col" class="py-3 px-3 sm:px-4 min-w-[200px]">Tags</th>
             </tr>
           </thead>
-          <tbody id="question-table-body" class="divide-y divide-zinc-800/60">
+          <tbody id="question-table-body" class="divide-y divide-slate-200 dark:divide-zinc-800/60">
             <!-- Questions rendered via JS -->
           </tbody>
         </table>
       </div>
-      <div id="no-results" class="hidden p-8 text-center text-zinc-500">
-        No questions match your current filters.
+      <div id="no-results" class="hidden p-8 text-center text-slate-500 dark:text-zinc-500 text-sm">
+        No questions match your search or filters.
       </div>
     </section>
 
