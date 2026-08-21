@@ -1,0 +1,354 @@
+[
+  {
+    "id": 1,
+    "title": "Boats to Save People",
+    "category": "Minimum Power Generation",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/boats-to-save-people/description/",
+    "tags": ["Two Pointers", "Greedy", "Sorting"]
+  },
+  {
+    "id": 2,
+    "title": "Maximum Sum Absolute Difference Array",
+    "category": "Minimum Power Generation",
+    "difficulty": "Medium",
+    "link": "https://www.geeksforgeeks.org/dsa/maximum-sum-absolute-difference-array/",
+    "tags": ["Greedy", "Array", "Sorting"]
+  },
+  {
+    "id": 3,
+    "title": "Minimize Maximum Pair Sum in Array",
+    "category": "Minimum Power Generation",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/description/",
+    "tags": ["Two Pointers", "Greedy", "Sorting"]
+  },
+  {
+    "id": 4,
+    "title": "Find the Number of Distinct Colors Among the Balls",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/find-the-number-of-distinct-colors-among-the-balls/",
+    "tags": ["Hash Table", "Array"]
+  },
+  {
+    "id": 5,
+    "title": "Number of Adjacent Elements With the Same Color",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/number-of-adjacent-elements-with-the-same-color/",
+    "tags": ["Array", "Hash Table"]
+  },
+  {
+    "id": 6,
+    "title": "Corporate Flight Bookings",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/corporate-flight-bookings/",
+    "tags": ["Array", "Prefix Sum"]
+  },
+  {
+    "id": 7,
+    "title": "Shifting Letters II",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/shifting-letters-ii/",
+    "tags": ["Array", "String", "Prefix Sum"]
+  },
+  {
+    "id": 8,
+    "title": "Range Frequency Queries",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/range-frequency-queries/",
+    "tags": ["Array", "Hash Table", "Binary Search", "Segment Tree"]
+  },
+  {
+    "id": 9,
+    "title": "Range Questions Asked in Online Assessment",
+    "category": "Ball Coloring",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/discuss/study-guide/1726877/range-questions-asked-in-many-interviews-online-assessment/",
+    "tags": ["Study Guide", "Range Queries"]
+  },
+  {
+    "id": 10,
+    "title": "Paint House II",
+    "category": "Thermostat",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/paint-house-ii/description/",
+    "tags": ["Dynamic Programming", "Matrix"]
+  },
+  {
+    "id": 11,
+    "title": "Minimize Cost of Painting N Houses",
+    "category": "Thermostat",
+    "difficulty": "Medium",
+    "link": "https://www.geeksforgeeks.org/dsa/minimize-cost-of-painting-n-houses-such-that-adjacent-houses-have-different-colors/",
+    "tags": ["Dynamic Programming", "Array"]
+  },
+  {
+    "id": 12,
+    "title": "Minimum Falling Path Sum II",
+    "category": "Thermostat",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/minimum-falling-path-sum-ii/description/",
+    "tags": ["Dynamic Programming", "Matrix"]
+  },
+  {
+    "id": 13,
+    "title": "Best Time to Buy and Sell Stock with Transaction Fee",
+    "category": "Thermostat",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/",
+    "tags": ["Dynamic Programming", "Greedy", "Array"]
+  },
+  {
+    "id": 14,
+    "title": "Path in Matrix",
+    "category": "Thermostat",
+    "difficulty": "Medium",
+    "link": "https://www.geeksforgeeks.org/problems/path-in-matrix3805/1",
+    "tags": ["Dynamic Programming", "Matrix"]
+  },
+  {
+    "id": 15,
+    "title": "Maximum Number of Points with Cost",
+    "category": "Grid Path",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/maximum-number-of-points-with-cost/description/",
+    "tags": ["Dynamic Programming", "Array", "Matrix"]
+  },
+  {
+    "id": 16,
+    "title": "Minimum Falling Path Sum",
+    "category": "Grid Path",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/minimum-falling-path-sum/description/",
+    "tags": ["Dynamic Programming", "Matrix"]
+  },
+  {
+    "id": 17,
+    "title": "Non-negative Integers without Consecutive Ones",
+    "category": "Binary Strings",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
+    "tags": ["Dynamic Programming", "Bit Manipulation"]
+  },
+  {
+    "id": 18,
+    "title": "Student Attendance Record II",
+    "category": "Binary Strings",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/student-attendance-record-ii/description/",
+    "tags": ["Dynamic Programming"]
+  },
+  {
+    "id": 19,
+    "title": "Knight Dialer",
+    "category": "Binary Strings",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/knight-dialer/description/",
+    "tags": ["Dynamic Programming"]
+  },
+  {
+    "id": 20,
+    "title": "Smallest Integer Divisible by K",
+    "category": "Binary Strings",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/smallest-integer-divisible-by-k/description/",
+    "tags": ["Math", "Hash Table"]
+  },
+  {
+    "id": 21,
+    "title": "Greatest Sum Divisible by Three",
+    "category": "Binary Strings",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/greatest-sum-divisible-by-three/description/",
+    "tags": ["Dynamic Programming", "Array", "Greedy"]
+  },
+  {
+    "id": 22,
+    "title": "Count Number of Teams",
+    "category": "Binary Strings",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/count-number-of-teams/description/",
+    "tags": ["Array", "Dynamic Programming", "Binary Indexed Tree"]
+  },
+  {
+    "id": 23,
+    "title": "Edit Distance",
+    "category": "Minimum Cost String Transformation",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/edit-distance/",
+    "tags": ["String", "Dynamic Programming"]
+  },
+  {
+    "id": 24,
+    "title": "Minimum Swaps To Make Sequences Increasing",
+    "category": "Minimum Cost String Transformation",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/description/",
+    "tags": ["Dynamic Programming", "Array"]
+  },
+  {
+    "id": 25,
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "category": "Minimum Cost String Transformation",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/",
+    "tags": ["Dynamic Programming", "Array"]
+  },
+  {
+    "id": 26,
+    "title": "Delete Operation for Two Strings",
+    "category": "Minimum Cost String Transformation",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/delete-operation-for-two-strings/description/",
+    "tags": ["String", "Dynamic Programming"]
+  },
+  {
+    "id": 27,
+    "title": "Distinct Subsequences",
+    "category": "Minimum Cost String Transformation",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/distinct-subsequences/description/",
+    "tags": ["String", "Dynamic Programming"]
+  },
+  {
+    "id": 28,
+    "title": "Find Pivot Index",
+    "category": "Average Balance Index",
+    "difficulty": "Easy",
+    "link": "https://leetcode.com/problems/find-pivot-index/",
+    "tags": ["Array", "Prefix Sum"]
+  },
+  {
+    "id": 29,
+    "title": "Find the Middle Index in Array",
+    "category": "Average Balance Index",
+    "difficulty": "Easy",
+    "link": "https://leetcode.com/problems/find-the-middle-index-in-array/description/",
+    "tags": ["Array", "Prefix Sum"]
+  },
+  {
+    "id": 30,
+    "title": "Number of Ways to Split Array",
+    "category": "Average Balance Index",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/number-of-ways-to-split-array/description/",
+    "tags": ["Array", "Prefix Sum"]
+  },
+  {
+    "id": 31,
+    "title": "Plates Between Candles",
+    "category": "Average Balance Index",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/plates-between-candles/description/",
+    "tags": ["Array", "String", "Binary Search", "Prefix Sum"]
+  },
+  {
+    "id": 32,
+    "title": "Equilibrium Point",
+    "category": "Average Balance Index",
+    "difficulty": "Easy",
+    "link": "https://www.geeksforgeeks.org/problems/equilibrium-point-1587115620/1",
+    "tags": ["Array", "Prefix Sum"]
+  },
+  {
+    "id": 33,
+    "title": "Largest Perimeter Triangle",
+    "category": "Triangle",
+    "difficulty": "Easy",
+    "link": "https://leetcode.com/problems/largest-perimeter-triangle/description/",
+    "tags": ["Array", "Math", "Greedy", "Sorting"]
+  },
+  {
+    "id": 34,
+    "title": "Maximum Perimeter of Triangle from Array",
+    "category": "Triangle",
+    "difficulty": "Easy",
+    "link": "https://www.geeksforgeeks.org/problems/maximum-perimeter-of-triangle-from-array4322/1",
+    "tags": ["Array", "Math", "Sorting"]
+  },
+  {
+    "id": 35,
+    "title": "Valid Triangle Number",
+    "category": "Triangle",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/valid-triangle-number/description/",
+    "tags": ["Array", "Two Pointers", "Binary Search", "Sorting"]
+  },
+  {
+    "id": 36,
+    "title": "Largest Triangle Area",
+    "category": "Triangle",
+    "difficulty": "Easy",
+    "link": "https://leetcode.com/problems/largest-triangle-area/description/",
+    "tags": ["Array", "Math", "Geometry"]
+  },
+  {
+    "id": 37,
+    "title": "Maximum Subarray Sum with One Deletion",
+    "category": "Maximum Subarray with One Deletion",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/description/",
+    "tags": ["Dynamic Programming", "Array"]
+  },
+  {
+    "id": 38,
+    "title": "Maximum Subarray",
+    "category": "Maximum Subarray with One Deletion",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/maximum-subarray/description/",
+    "tags": ["Array", "Divide and Conquer", "Dynamic Programming"]
+  },
+  {
+    "id": 39,
+    "title": "Maximum Product Subarray",
+    "category": "Maximum Subarray with One Deletion",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/maximum-product-subarray/description/",
+    "tags": ["Array", "Dynamic Programming"]
+  },
+  {
+    "id": 40,
+    "title": "Maximum Sum Circular Subarray",
+    "category": "Maximum Subarray with One Deletion",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/maximum-sum-circular-subarray/description/",
+    "tags": ["Array", "Divide and Conquer", "Dynamic Programming", "Queue"]
+  },
+  {
+    "id": 41,
+    "title": "Maximize Subarray Sum After Removing All Occurrences of One Element",
+    "category": "Maximum Subarray with One Deletion",
+    "difficulty": "Hard",
+    "link": "https://leetcode.com/problems/maximize-subarray-sum-after-removing-all-occurrences-of-one-element/description/",
+    "tags": ["Array", "Dynamic Programming"]
+  },
+  {
+    "id": 42,
+    "title": "0-1 Knapsack Problem",
+    "category": "Knapsack and LCS Problem",
+    "difficulty": "Medium",
+    "link": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
+    "tags": ["Dynamic Programming"]
+  },
+  {
+    "id": 43,
+    "title": "Fractional Knapsack",
+    "category": "Knapsack and LCS Problem",
+    "difficulty": "Easy",
+    "link": "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1",
+    "tags": ["Greedy", "Sorting"]
+  },
+  {
+    "id": 44,
+    "title": "Longest Common Subsequence",
+    "category": "Knapsack and LCS Problem",
+    "difficulty": "Medium",
+    "link": "https://leetcode.com/problems/longest-common-subsequence/description/",
+    "tags": ["Dynamic Programming", "String"]
+  }
+]
